@@ -26,10 +26,17 @@ img {
  	margin: 0 auto;
 }
 
-body {
+.info {
 	width: 600px;
-	margin: 0 auto;
+	margin: left auto;
   	background-color: #FF9500;
  	padding: 0 20px 20px 20px;
  	border: 5px solid black;
+}
+
+.video {
+	width: 600px;
+	height: 600px;
+	margin: -700px 1000px;
+	border: 5px solid black;
 }
