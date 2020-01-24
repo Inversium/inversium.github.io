@@ -95,6 +95,7 @@ body {
 }
 
 .tab :checked + .tab-title {
+	border-bottom: 1px solid white;
 	position: relative;
 	color: #FFFFFF;
 	background: linear-gradient(to top, rgb(60,60,60,.4), rgb(60,60,60,0)); 
@@ -105,28 +106,6 @@ body {
 	display: block;
 }
 
-.line1 {
-	height: 1px;
-	width: 220px;
-	margin-top: -20px;
-	background: #FFFFFF;
-}
-
-.line2 {
-	height: 1px;
-	width: 220px;
-	margin-top: -20px;
-	margin-left: 222.5px;
-	background: #FFFFFF;
-}
-
-.line3 {
-	height: 1px;
-	width: 220px;
-	margin-top: -20px;
-	margin-left: 445px;
-	background: #FFFFFF;
-}
 
 .term {
 	position: relative;
