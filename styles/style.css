@@ -8,16 +8,12 @@ p, li {
 html {
 	font-size: 10px;
 	font-family: "Open Sans";
-	background-color: #00539F;
 }
 
 h1 {
 	font-size: 60px;
-	text-align: center;
 	margin: 0;
- 	padding: 20px 0;    
- 	color: #00539F;
- 	text-shadow: 3px 3px 1px black;
+ 	padding: 0px 0px;
 }
 
 img {
@@ -26,17 +22,106 @@ img {
  	margin: 0 auto;
 }
 
-.info {
-	width: 600px;
-	margin: left auto;
-  	background-color: #FF9500;
- 	padding: 0 20px 20px 20px;
- 	border: 5px solid black;
+body {
+	margin: 0;
 }
 
-.video {
+hr {
+	margin-top: 10px;
+	width: 300px;
+}
+
+.tabs {
+    position: absolute;
+    top: 120px;
+    left: 45%;
+    width: 800px;
+}
+
+.tab, .tab-title {
+	display: inline-block;
+}
+
+.tab input[type="radio"] {
+ 	display: none; 
+}
+
+.tab-title {
+	font-size: 20px;
+	color: #A0A0A0;
+	width: 200px;
+	text-align: center;
+	text-decoration-style: wavy;
+	padding: 5px 10px; /* Поля вокруг текста */
+}
+
+.tab-content {
+	position: absolute;
+	color: #FFFFFF;
+	font-size: 18px;
+	word-spacing: 2px;
+	padding: 20px;
+	padding-top: 20px;
+	left: 0;
 	width: 600px;
+	display: none;
+}
+
+.tab :checked + .tab-title {
+	position: relative;
+	color: #FFFFFF;
+	background: linear-gradient(to top, rgb(60,60,60,.4), rgb(60,60,60,0)); 
+	z-index: 1;
+}
+
+.tab :checked ~ .tab-content {
+	display: block; /* Показываем активную вкладку */
+}
+
+.term {
+	position: relative;
+	width: 400px;
+	left: calc(20% - 200px);
+	top: 20%;
+	vertical-align: middle;
+	text-align: center;
+	color: #F1F1F1;
+}
+
+.def {
+	position: relative;
+	font-size: 18px;
+	text-align: left;
+	top: calc(20% + 5px);
+	left: calc(20% - 145px);
+	width: 290px;
+}
+
+.ref:hover {
+	color: #006363;
+}
+
+#coffee-def {
+	color: #FFFFFF;
+}
+
+
+.block1 {
+	background-color: #232020;
 	height: 600px;
-	margin: -700px 1000px;
-	border: 5px solid black;
+}
+
+.block2 {
+	background-color: #E1F4F3;
+	height: 600px;
+}
+
+.block3 {
+	background-color: #333333;
+	height: 600px;
+}
+
+.block4 {
+	background-color: #FFFFFF;
+	height: 600px;
 }
