@@ -9,6 +9,7 @@ p, li {
 }
 
 html {
+	overflow-x: hidden;
 	font-size: 10px;
 	font-family: 'Open Sans', sans-serif;
 }
@@ -32,7 +33,7 @@ body {
 @keyframes slide-in {
 	from {
 	    left: -20%;
-	    color: transparent;
+	    opacity: 0;
     }
 
     20% {
@@ -41,17 +42,17 @@ body {
 
   	to {
     	left: calc(20% - 145px);
-    	color: #FFFFFF;
+    	opacity: 1;
   	}
 }
 
 @keyframes reveal {
 	from {
-		color: transparent;
+		opacity: 0;
 	}
 
 	to {
-		color: #FFFFFF;
+		opacity: 1;
 	}
 }
 
@@ -64,7 +65,7 @@ body {
     position: absolute;
     top: 120px;
     left: 45%;
-    width: 800px;
+    width: 665.5px;
 }
 
 .tab, .tab-title {
@@ -116,8 +117,17 @@ body {
 	top: 20%;
 	vertical-align: middle;
 	text-align: center;
-	color: #F1F1F1;
 }
+
+.coffee {
+	color: #F1F1F1;
+
+}
+
+.mint {
+	color: #a7e9af;
+}
+
 
 .def {
 	position: relative;
