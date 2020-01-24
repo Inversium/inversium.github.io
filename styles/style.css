@@ -29,7 +29,33 @@ body {
 	margin: 0;
 }
 
-hr {
+@keyframes slide-in {
+	from {
+	    left: -20%;
+	    color: transparent;
+    }
+
+    20% {
+    	color: rgba(255,255,255,0.1);
+    }
+
+  	to {
+    	left: calc(20% - 145px);
+    	color: #FFFFFF;
+  	}
+}
+
+@keyframes reveal {
+	from {
+		color: transparent;
+	}
+
+	to {
+		color: #FFFFFF;
+	}
+}
+
+.term > hr {
 	margin-top: 10px;
 	width: 300px;
 }
@@ -54,8 +80,7 @@ hr {
 	color: #A0A0A0;
 	width: 200px;
 	text-align: center;
-	text-decoration-style: wavy;
-	padding: 5px 10px; /* Поля вокруг текста */
+	padding: 5px 10px;
 }
 
 .tab-content {
@@ -63,10 +88,9 @@ hr {
 	color: #FFFFFF;
 	font-size: 18px;
 	word-spacing: 2px;
-	padding: 20px;
 	padding-top: 20px;
 	left: 0;
-	width: 600px;
+	width: 630px;
 	display: none;
 }
 
@@ -78,11 +102,36 @@ hr {
 }
 
 .tab :checked ~ .tab-content {
-	display: block; /* Показываем активную вкладку */
+	display: block;
+}
+
+.line1 {
+	height: 1px;
+	width: 220px;
+	margin-top: -20px;
+	background: #FFFFFF;
+}
+
+.line2 {
+	height: 1px;
+	width: 220px;
+	margin-top: -20px;
+	margin-left: 222.5px;
+	background: #FFFFFF;
+}
+
+.line3 {
+	height: 1px;
+	width: 220px;
+	margin-top: -20px;
+	margin-left: 445px;
+	background: #FFFFFF;
 }
 
 .term {
 	position: relative;
+	animation-name: reveal;
+	animation-duration: 2.3s; 
 	width: 400px;
 	left: calc(20% - 200px);
 	top: 20%;
@@ -93,6 +142,9 @@ hr {
 
 .def {
 	position: relative;
+	overflow: hidden;
+	animation-name: slide-in;
+	animation-duration: 1.3s; 
 	font-size: 18px;
 	text-align: left;
 	top: calc(20% + 5px);
