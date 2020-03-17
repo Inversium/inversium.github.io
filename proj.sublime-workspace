@@ -4,6 +4,94 @@
 		"selected_items":
 		[
 			[
+				"animtion",
+				"animation-name\tproperty"
+			],
+			[
+				"te",
+				"text-decoration\tproperty"
+			],
+			[
+				"inner",
+				"innerText"
+			],
+			[
+				"marg",
+				"margin-left\tproperty"
+			],
+			[
+				"Store",
+				"StoreText"
+			],
+			[
+				"Build",
+				"buildDetails"
+			],
+			[
+				"align",
+				"align-content\tproperty"
+			],
+			[
+				"font-s",
+				"font-size\tproperty"
+			],
+			[
+				"close",
+				"closebutton"
+			],
+			[
+				"outli",
+				"outline-color\tproperty"
+			],
+			[
+				"out",
+				"outline-width\tproperty"
+			],
+			[
+				"mar",
+				"margin-top\tproperty"
+			],
+			[
+				"overf",
+				"overflow-y\tproperty"
+			],
+			[
+				"paddin",
+				"padding\tproperty"
+			],
+			[
+				"max",
+				"max-width\tproperty"
+			],
+			[
+				"table",
+				"table-row\tdisplay"
+			],
+			[
+				"inline",
+				"inline-grid\tdisplay"
+			],
+			[
+				"FONT",
+				"font-weight\tproperty"
+			],
+			[
+				"add",
+				"appendChild"
+			],
+			[
+				"q",
+				"querySelector"
+			],
+			[
+				"class",
+				"classList"
+			],
+			[
+				"query",
+				"querySelectorAll"
+			],
+			[
 				"onm",
 				"onmouseout"
 			],
@@ -18,10 +106,6 @@
 			[
 				"animation",
 				"animation-name\tproperty"
-			],
-			[
-				"inner",
-				"innerText"
 			],
 			[
 				"clas",
@@ -74,14 +158,6 @@
 			[
 				"ea",
 				"ease-in-out\tanimation-timing-function"
-			],
-			[
-				"inline",
-				"inline-grid\tdisplay"
-			],
-			[
-				"align",
-				"align-items\tproperty"
 			],
 			[
 				"s",
@@ -151,7 +227,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 3844,
+				"buffer_size": 3834,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -160,7 +236,7 @@
 			"file": "styles/style.css",
 			"settings":
 			{
-				"buffer_size": 3680,
+				"buffer_size": 4832,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -169,7 +245,7 @@
 			"file": "js/script.js",
 			"settings":
 			{
-				"buffer_size": 5100,
+				"buffer_size": 8435,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -178,16 +254,8 @@
 			"file": "month/march.js",
 			"settings":
 			{
-				"buffer_size": 3029,
+				"buffer_size": 4861,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "_config.yml",
-			"settings":
-			{
-				"buffer_size": 26,
 				"line_ending": "Windows"
 			}
 		}
@@ -277,7 +345,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -286,15 +354,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3844,
+						"buffer_size": 3834,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								432,
-								432
+								896,
+								896
 							]
 						],
 						"settings":
@@ -302,10 +370,10 @@
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 399.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -314,15 +382,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3680,
+						"buffer_size": 4832,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2942,
-								2942
+								1838,
+								1838
 							]
 						],
 						"settings":
@@ -330,10 +398,10 @@
 							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2622.0,
+						"translation.y": 1881.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -342,15 +410,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5100,
+						"buffer_size": 8435,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3302,
-								3302
+								1870,
+								1870
 							]
 						],
 						"settings":
@@ -358,10 +426,10 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2280.0,
+						"translation.y": 285.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -370,15 +438,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3029,
+						"buffer_size": 4861,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								827,
-								827
+								1014,
+								1014
 							]
 						],
 						"settings":
@@ -387,38 +455,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 171.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "_config.yml",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 26,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/YAML/YAML.sublime-syntax"
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

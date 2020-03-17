@@ -1,9 +1,147 @@
 
 
-let days = document.querySelectorAll('#calendar td.CorrectMonth');
+var days = document.querySelectorAll('tr > td.CorrectMonth, tr > div.CorrectMonth');
 var d = new Date();
 var num = d.getDate();
 var bool = 1;
+
+var buildTrailer = function(date) {
+	let iframe = document.createElement('iframe');
+	iframe.src = data[date][0].YT_link;
+	iframe.setAttribute('allowfullscreen', 'true')
+	return iframe;
+}
+
+var buildDescription = function(date) {
+	let div = document.createElement('div');
+	let desc = document.createElement('p');
+	let header = document.createElement('h1');
+	desc.innerText = data[date][0].description;
+	header.innerText = 'Description';
+	header.classList.add('infoheader');
+	div.appendChild(header);
+	div.appendChild(desc);
+	return div;
+}
+
+var buildDetails = function(date, index) {
+	let publisher = document.createElement('p');
+	let developer = document.createElement('p');
+	let genres = document.createElement('p');
+	let stores = document.createElement('p');
+	let div = document.createElement('div');
+
+	publisher.classList.add('publisher');
+	developer.classList.add('developer');
+	genres.classList.add('genres');
+	stores.classList.add('stores');
+
+	let StoreText = '<b>Store(s): </b>';
+
+	for(let store in data[date][index].stores) {
+		StoreText += '<a href = "' + data[date][index].stores[store] + '">' + store + '</a>' + ', ';
+	}
+	StoreText = StoreText.slice(index, -2);
+
+	stores.innerHTML = StoreText;
+	genres.innerHTML = '<b>Genre(s):</b> ' + data[date][index].genres;
+	if(data[date][index].pub_wiki != undefined) publisher.innerHTML = '<b>Publisher: </b><a href ="' + data[date][index].pub_wiki + '">' + data[date][index].publisher + '</a>';	
+	else publisher.innerHTML = '<b>Publisher: </b>' + data[date][index].publisher;
+	if(data[date][index].dev_wiki != undefined) developer.innerHTML = '<b>Developer: </b><a href ="' + data[date][index].dev_wiki + '">' + data[date][index].developer + '</a>';
+	else developer.innerHTML = '<b>Developer: </b>' + data[date][index].developer;
+
+	div.appendChild(publisher);
+	div.appendChild(developer);
+	div.appendChild(genres);
+	div.appendChild(stores);
+	div.classList.add('details');
+	return div;
+}
+
+var buildInfoBlock = function(date, index) {
+	date = '_' + date;
+	let div = document.createElement('div');
+	div.classList.add('infoblock');
+	let details = buildDetails(date, index);
+	let description = buildDescription(date, index);
+	let closebutton = document.createElement('button');
+	closebutton.classList.add('closeinfo');
+	closebutton.innerHTML = '<p class = "buttontext">' + 'CLOSE' + '</p>';
+	closebutton.onclick = deleteInfoBlock;
+	description.classList.add('description');
+	if(data[date][index].YT_link != null) 
+		{
+			let trailer = buildTrailer(date);
+			div.appendChild(trailer);
+		}
+	div.appendChild(description);
+	div.appendChild(details);
+	div.appendChild(closebutton);
+	return div;
+}
+
+var showInfo = function() {
+	let elem = document.querySelector('.checked');
+	if(elem != null) elem.classList.remove('checked');
+	this.classList.add('checked');
+	let date = this.querySelector('.day').innerText;
+	let index = this.parentNode.querySelector('.checked_cell').getAttribute('data-index');
+	if(elem !== this) {
+		let prevInfo = document.querySelector('.infoblock');
+		if(prevInfo != null) document.querySelector('body').removeChild(prevInfo);		
+		let infoblock = buildInfoBlock(date, index);
+		document.querySelector('body').appendChild(infoblock);
+	}
+	
+}
+
+var createTableCell = function(release, date) {
+	let cell = document.createElement('td');
+
+	cell.style.backgroundImage = 'url(' + release.image_path + ')';
+	cell.classList.add('hasRelease');
+	cell.classList.add('CorrectMonth');
+	cell.innerHTML = '<p class = "day">' + date + '</p>';
+
+	let title = document.createElement('h');
+	title.innerText = release.name;
+	title.classList.add('game_title');
+	cell.appendChild(title);
+
+	let iconset = document.createElement('div');
+	for(let logo of release.devices) {
+		let img = document.createElement('img');
+		img.src = 'images/logos/' + logo + '.png';
+		img.height = 20;
+		img.width = 20;
+		img.classList.add('icon');
+		img.onload = function() {
+			iconset.appendChild(img);
+		}
+	}
+	iconset.classList.add('iconset');
+	cell.appendChild(iconset);
+
+	cell.onclick = showInfo;
+
+	return cell;
+}
+
+var deleteInfoBlock = function() {
+	let infoblock = document.querySelector('.infoblock');
+	document.querySelector('body').removeChild(infoblock);
+	let elem = document.querySelector('.checked');
+	elem.classList.remove('checked');
+}
+
+var showNewCell = function() {
+	this.parentNode.querySelector('.checked_cell').classList.remove('checked_cell');
+	this.classList.add('checked_cell');
+	let i = this.getAttribute('data-index');
+	let date = '_' + this.parentNode.parentNode.querySelector('.day').innerText;
+	let cell = createTableCell(data[date][i], date.slice(1));
+	this.parentNode.parentNode.replaceChild(cell, this.parentNode.parentNode.querySelector('td.hasRelease'));
+}
 
 for (let day of days) {
 	let date = '_' + day.innerText;
@@ -17,32 +155,13 @@ for (let day of days) {
 			body.style.backgroundImage = 'url(' + data[date][0].image_path + ')';
 			bool = 0;
 		}
+		
+		let newcell = createTableCell(data[date][0], date.slice(1));
+		day.parentNode.replaceChild(newcell, day);
 
-		day.style.backgroundImage = 'url(' + data[date][0].image_path + ')';
-		day.classList.add('hasRelease');
-			
-		let title = document.createElement('h');
-		title.innerText = data[date][0].name;
-		title.classList.add('game_title');
-		day.appendChild(title);
-
-		let div = document.createElement('div');
-		div.classList.add('iconset');
-		day.appendChild(div);
-
-		for(let logo of data[date][0].devices) {
-			let img = document.createElement('img');
-			img.src = 'images/logos/' + logo + '.png';
-			img.height = 20;
-			img.width = 20;
-			img.classList.add('icon');
-			img.onload = function() {
-				day.querySelector('.iconset').appendChild(img);
-			}
-		}
 	}
 
-	if(data[date].length === 2) {
+	if(data[date].length > 1) {
 
 		if(day.innerText >= num && bool) {
 			let body = document.querySelector('body');
@@ -50,109 +169,25 @@ for (let day of days) {
 			bool = 0;
 		}
 
-		day.style.backgroundImage = 'url(' + data[date][0].image_path + ')';
-
-		prev = day.previousElementSibling;
-		day.classList.add('FirstRelease');
-		day.classList.add('hasRelease');
-		let iconset = document.createElement('div');
-		iconset.classList.add('iconset');
-
-
-		for(let logo of data[date][0].devices) {
-			let img = document.createElement('img');
-			img.src = 'images/logos/' + logo + '.png';
-			img.height = 20;
-			img.width = 20;
-			img.classList.add('icon');
-			iconset.style.visibility = "hidden";
-			img.onload = function() {
-				iconset.appendChild(img);
-			}
-		}		
-		iconset.style.transition = "all .3s ease-in-out";
-		day.appendChild(iconset);
-
-		let title = document.createElement('h');
-		title.innerText = data[date][0].name;
-		title.classList.add('game_title');
-		title.style.visibility = "hidden";
-		title.style.transition = "all .3s ease-in-out";
-		day.appendChild(title);
-
-		day.onmouseover = function(event) {
-			day.querySelector('.iconset').style.visibility = "visible";
-			day.querySelector('.iconset').style.transform = "translateX(0px)";
-			day.querySelector('.iconset').style.opacity = "1";	
-			day.querySelector('.game_title').style.visibility = "visible";
-			day.querySelector('.game_title').style.transform = "translateX(0px)";
-			day.querySelector('.game_title').style.opacity = "1";
-		};
-
-		day.onmouseout = function(event) {
-			day.querySelector('.iconset').style.visibility = "hidden";
-			day.querySelector('.iconset').style.transform = "translateX(-25px)";
-			day.querySelector('.iconset').style.opacity = "0";
-			day.querySelector('.game_title').style.visibility = "hidden";
-			day.querySelector('.game_title').style.transform = "translateX(-25px)";
-			day.querySelector('.game_title').style.opacity = "0";
-		};
-
-
-		let td = document.createElement('td');
-		td.innerHTML = '<p class = "day">' + date.slice(1) + '</p>';
-		td.classList.add('CorrectMonth');
-		td.classList.add('SecondRelease');
-		td.classList.add('hasRelease');
-		td.style.backgroundImage = 'url(' + data[date][1].image_path + ')';
-		let iconset1 = document.createElement('div');
-		iconset1.classList.add('iconset');
-		
-		for(let logo of data[date][1].devices) {
-			let img = document.createElement('img');
-			img.src = 'images/logos/' + logo + '.png';
-			img.height = 20;
-			img.width = 20;
-			img.classList.add('icon');
-			iconset1.style.visibility = "hidden";
-			img.onload = function() {
-				iconset1.appendChild(img);
-			}
+		let radioset = document.createElement('div');
+		radioset.classList.add('radioset');		
+		for (var i = 0; i < data[date].length; i++) {
+			let radio = document.createElement('div');
+			radio.classList.add('radio');
+			radio.onclick = showNewCell;
+			radio.setAttribute('data-index', i);
+			radioset.appendChild(radio);
 		}
-		iconset1.style.transition = "all .3s ease-in-out";
-		td.appendChild(iconset1);
-
-		let title1 = document.createElement('h');
-		title1.innerText = data[date][1].name;
-		title1.classList.add('game_title');
-		title1.style.visibility = "hidden";
-		title1.style.transition = "all .3s ease-in-out";
-		td.appendChild(title1);
-
-		td.onmouseover = function(event) {
-			td.querySelector('.iconset').style.visibility = "visible";
-			td.querySelector('.iconset').style.transform = "translateX(0px)";
-			td.querySelector('.iconset').style.opacity = "1";
-			td.querySelector('.game_title').style.visibility = "visible";
-			td.querySelector('.game_title').style.transform = "translateX(0px)";
-			td.querySelector('.game_title').style.opacity = "1";
-		};
-
-		td.onmouseout = function(event) {
-			td.querySelector('.iconset').style.visibility = "hidden";
-			td.querySelector('.iconset').style.transform = "translateX(-25px)";
-			td.querySelector('.iconset').style.opacity = "0";
-			td.querySelector('.game_title').style.visibility = "hidden";
-			td.querySelector('.game_title').style.transform = "translateX(-25px)";
-			td.querySelector('.game_title').style.opacity = "0";
-		};
+		radioset.firstChild.classList.add('checked_cell');
 
 		let div = document.createElement('div');
+		div.classList.add('hasRelease');
 		div.classList.add('CorrectMonth');
-		div.classList.add('hasRelease')
-		div.appendChild(day);
-		div.appendChild(td);		
-		prev.insertAdjacentElement('afterend', div);
+		div.appendChild(radioset);
+		div.appendChild(createTableCell(data[date][0], date.slice(1)));
+		day.parentNode.replaceChild(div, day);
+		
+		
 	}
 
 

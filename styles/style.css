@@ -1,14 +1,10 @@
 
-@import url('https://fonts.googleapis.com/css?family=Ropa+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap');
 
 p {
 	font-size: 16px;    
 	line-height: 2;
-	letter-spacing: 1px;
-	width: 400px;
 }
 
 
@@ -17,15 +13,13 @@ ul {
 }
 
 html {
-	overflow-x: hidden;
-	
 	font-size: 18px;
-	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 }
 
 h1 {
-	font-size: 60px;
-	margin: 0;
+	font-size: 30px;
+	margin: 15px;
  	padding: 0px 0px;
 }
 
@@ -65,6 +59,147 @@ table {
 	z-index: 1;
 }
 
+iframe {
+	float: left;
+	border-width: 0px;
+	height: 100%;
+	max-width: 400px;
+	width: 30%;
+}
+
+a {
+	text-decoration: none;
+	color: blue;
+}
+
+a:hover {
+	border-bottom: 1px solid blue;
+}
+
+.checked_cell {
+	position: relative;
+}
+
+.checked_cell::after {
+	content: '';
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	height: 16px;
+	width: 16px;
+	border-radius: 50%;
+	animation: 0.3s ease-in-out 0s radio-focus;
+	animation-fill-mode: forwards;
+	background-color: white;
+}
+
+@keyframes radio-focus {
+	from {
+		opacity: 0;
+	}	
+	to {
+		opacity: 1;
+	}
+}
+
+.radio {
+	border-radius: 50%;
+	box-shadow: 0px 0px 0px 3px white;
+	margin: 8px;
+	height: 18px;
+	width: 18px;
+}
+
+.radioset {
+	position: absolute;
+	right: 0px;
+	z-index: 5;
+}
+
+
+.infoblock {
+	display: flex;
+	background-color: white;
+	bottom: 0px;
+	width: 100%;
+	height: 25%;
+	position: fixed;
+	z-index: 10;
+}
+
+.infoheader {
+	margin-bottom: 5px;
+}
+
+.description {
+	position: relative;
+	float: left;
+	width: 60%;
+	max-width: 700px;
+}
+
+.description > p {
+	font-size: 18px;
+	overflow-y: auto;
+	margin: 15px;
+	margin-top: 0px;
+	width: 100%;
+	height: 70%;
+	line-height: 1.5;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.publisher, .developer, .stores, .genres {
+	font-size: 20px;
+	line-height: 15px;
+	margin: 10px;
+}
+
+.checked::after {
+	transition: all 0.3s ease-in-out;
+	border: 3px solid white;
+}
+
+
+.details {
+	float: left;
+	display: block;
+	margin: 15px;
+	margin-left: 30px;
+}
+
+.closeinfo {
+	outline: none;
+	position: absolute;
+	right: 0px;
+	height: 100%;
+	float: right;
+	transition: background-color 0.2s ease-in-out;
+	border: none;
+	width: 3%;
+	min-width: 40px;
+	background-color: #EFEFEF;
+	cursor: pointer;
+}
+
+.buttontext {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%) rotate(90deg);
+	letter-spacing: 15px;
+	font-size: 30px;
+	font-family: 'Quicksand', sans-serif;
+	color: #AAAAAA;
+	margin: 0px;
+}
+
+.closeinfo:hover {
+	background-color: #DDDDDD;
+}
 
 .weekdays {
 	position: relative;
@@ -78,7 +213,8 @@ table {
 	font-size: 26px;
 }
 
-#calendar > tbody > tr > td {
+#calendar > tbody > tr > td,
+#calendar > tbody > tr > div {
 	position: relative;
 	transition: all .3s ease-in-out;
  	background-repeat: no-repeat;
@@ -92,49 +228,22 @@ table {
 	z-index: 1;
 }
 
-.SecondRelease {
-	width: 100%;
-	clip-path: polygon(100% 0%, 0% 0%, 0% 100%);
-	position: absolute;
-	transition: all .3s ease-in-out;
- 	background-repeat: no-repeat;
-  	background-size: cover;
- 	background-position: center;
-	background-color: #25323D;
-	height: 160px;
-	border-radius: 15px;
-	padding: 0px;	
-	z-index: 1;
-}
-
-.SecondRelease:hover {
-	clip-path: polygon(200% 0%, 0% 0%, 0% 200%);
-}
-
-.FirstRelease {
-	height: 160px;
-	width: 100%;
-	position: absolute;
-	clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
-	transition: all .3s ease-in-out;
-	background-repeat: no-repeat;
-  	background-size: cover;
- 	background-position: right;
- 	border-radius: 15px;
- 	padding: 0px;
- 	z-index: 1;
-}
-
-.FirstRelease:hover {
-	clip-path: polygon(100% -100%, 100% 100%, -100% 100%);
-}
-
 div.hasRelease {
 	position: relative;
 	display: table-cell;
 }
 
-
+div.hasRelease > td {
+	position: absolute;
+	background-repeat: no-repeat;
+  	background-size: cover;
+ 	background-position: center;
+	padding: 0px;
+	height: 160px;
+	width: 100%;
+	border-radius: 15px;
+	z-index: 1;
+}
 
 #calendar td.hasRelease:after{
 	content: '';
@@ -146,11 +255,6 @@ div.hasRelease {
 	right: 0;
 	z-index: 2;
 	border-radius: 15px;
-}
-
-#calendar td.hasRelease:hover {
-	z-index: 3;
-	transform: scale(1.85);
 }
 
 .game_title {
