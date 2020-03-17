@@ -21,6 +21,13 @@ h1 {
 	font-size: 30px;
 	margin: 15px;
  	padding: 0px 0px;
+ 	z-index: 10;
+}
+
+.mainheader {
+	text-align: center;
+	color: white;
+	font-size: 70px;
 }
 
 
@@ -52,7 +59,7 @@ body::after {
 
 table {
 	position: relative;
-	margin-top: 100px;
+	margin-top: 50px;
 	margin-bottom: 150px;
 	border-spacing: 10px;
 	width: 85%;
@@ -75,6 +82,7 @@ a {
 a:hover {
 	border-bottom: 1px solid blue;
 }
+
 
 .checked_cell {
 	position: relative;

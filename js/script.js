@@ -5,18 +5,19 @@ var d = new Date();
 var num = d.getDate();
 var bool = 1;
 
-var buildTrailer = function(date) {
+var buildTrailer = function(date, index) {
 	let iframe = document.createElement('iframe');
-	iframe.src = data[date][0].YT_link;
-	iframe.setAttribute('allowfullscreen', 'true')
+	iframe.src = data[date][index].YT_link;
+	iframe.setAttribute('allowfullscreen', 'true');
+	iframe.setAttribute('frameborder', '0');
 	return iframe;
 }
 
-var buildDescription = function(date) {
+var buildDescription = function(date, index) {
 	let div = document.createElement('div');
 	let desc = document.createElement('p');
 	let header = document.createElement('h1');
-	desc.innerText = data[date][0].description;
+	desc.innerText = data[date][index].description;
 	header.innerText = 'Description';
 	header.classList.add('infoheader');
 	div.appendChild(header);
@@ -37,11 +38,10 @@ var buildDetails = function(date, index) {
 	stores.classList.add('stores');
 
 	let StoreText = '<b>Store(s): </b>';
-
 	for(let store in data[date][index].stores) {
 		StoreText += '<a href = "' + data[date][index].stores[store] + '">' + store + '</a>' + ', ';
 	}
-	StoreText = StoreText.slice(index, -2);
+	StoreText = StoreText.slice(0, -2);
 
 	stores.innerHTML = StoreText;
 	genres.innerHTML = '<b>Genre(s):</b> ' + data[date][index].genres;
@@ -71,7 +71,7 @@ var buildInfoBlock = function(date, index) {
 	description.classList.add('description');
 	if(data[date][index].YT_link != null) 
 		{
-			let trailer = buildTrailer(date);
+			let trailer = buildTrailer(date, index);
 			div.appendChild(trailer);
 		}
 	div.appendChild(description);
@@ -85,7 +85,13 @@ var showInfo = function() {
 	if(elem != null) elem.classList.remove('checked');
 	this.classList.add('checked');
 	let date = this.querySelector('.day').innerText;
-	let index = this.parentNode.querySelector('.checked_cell').getAttribute('data-index');
+	let index;
+
+	if(this.parentNode.classList.contains('CorrectMonth')) 
+		index = this.parentNode.querySelector('.checked_cell').getAttribute('data-index');
+	else 
+		index = 0;
+
 	if(elem !== this) {
 		let prevInfo = document.querySelector('.infoblock');
 		if(prevInfo != null) document.querySelector('body').removeChild(prevInfo);		
@@ -143,6 +149,10 @@ var showNewCell = function() {
 	this.parentNode.parentNode.replaceChild(cell, this.parentNode.parentNode.querySelector('td.hasRelease'));
 }
 
+function getRandomInt(max) {
+	return Math.floor(Math.random() * Math.floor(max));
+}
+
 for (let day of days) {
 	let date = '_' + day.innerText;
 
@@ -165,7 +175,7 @@ for (let day of days) {
 
 		if(day.innerText >= num && bool) {
 			let body = document.querySelector('body');
-			body.style.backgroundImage = 'url(' + data[date][0].image_path + ')';
+			body.style.backgroundImage = 'url(' + data[date][getRandomInt(data[date].length)].image_path + ')';
 			bool = 0;
 		}
 

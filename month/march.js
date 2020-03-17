@@ -12,7 +12,7 @@ var data = {
 			genres: "Action, Adventure, Roguelite",
 
 			stores: {
-				steam: "https://store.steampowered.com/app/1123770/Curse_of_the_Dead_Gods/"
+				Steam: "https://store.steampowered.com/app/1123770/Curse_of_the_Dead_Gods/"
 			},
 
 			devices : [
@@ -32,7 +32,7 @@ var data = {
 			genres: "First-Person Shooter",
 
 			stores: {
-				steam: "https://store.steampowered.com/app/362890/Black_Mesa/"
+				Steam: "https://store.steampowered.com/app/362890/Black_Mesa/"
 			},
 
 			devices : [
@@ -45,11 +45,18 @@ var data = {
 			name : "Yes, Your Grace",
 			developer : "Brave At Night",
 			publisher : "No More Robots",
+			YT_link: "https://www.youtube.com/embed/QRWG7m_7kzQ",
+			description: "In this kingdom management RPG, petitioners will arrive in the throne room each turn to ask for your advice and assistance. Decide whether to help them with their problems, or to conserve resources for more important matters. Remember: supplies are limited, and not everyone has the kingdom’s best interests at heart...",
+			dev_wiki: null,
+			pub_wiki: "https://en.wikipedia.org/wiki/No_More_Robots",
+			genres: "Strategy, Simulation, RPG",
+			
+			stores: {
+				Steam: "https://store.steampowered.com/app/1115690/Yes_Your_Grace/",
+			},
+
 			devices : [
-				"pc",
-				"switch",
-				"ps4",
-				"xone"		
+				"pc"	
 			] 
 		},
 
@@ -58,6 +65,17 @@ var data = {
 			name : "Murder by Numbers",
 			developer : "Mediatonic",
 			publisher : "The Irregular Corporation",
+			YT_link: "https://www.youtube.com/embed/QRWG7m_7kzQ",
+			description: "In this kingdom management RPG, petitioners will arrive in the throne room each turn to ask for your advice and assistance. Decide whether to help them with their problems, or to conserve resources for more important matters. Remember: supplies are limited, and not everyone has the kingdom’s best interests at heart...",
+			dev_wiki: "https://en.wikipedia.org/wiki/Mediatonic",
+			pub_wiki: null,
+			genres: "Adventure, Detective, Puzzle",
+			
+			stores: {
+				Steam: "https://store.steampowered.com/app/1140290/Murder_by_Numbers/",
+				Nintendo: "https://www.nintendo.com/games/detail/murder-by-numbers-switch/",
+			},
+
 			devices : [
 				"pc",
 				"switch"		
@@ -74,9 +92,10 @@ var data = {
 			publisher : "Xbox Game Studios",
 			pub_wiki: "https://en.wikipedia.org/wiki/Xbox_Game_Studios",
 			genres: "Platform-adventure, Metroidvania",
+
 			stores: {
-				steam: "https://store.steampowered.com/app/1057090/Ori_and_the_Will_of_the_Wisps/",
-				xbox: "https://www.xbox.com/en-us/games/ori-will-of-the-wisps?source=lp"
+				Steam: "https://store.steampowered.com/app/1057090/Ori_and_the_Will_of_the_Wisps/",
+				Microsoft: "https://www.xbox.com/en-us/games/ori-will-of-the-wisps?source=lp"
 			},
 		
 			devices : [
@@ -180,6 +199,31 @@ var data = {
 				"xone",
 				"ps4",
 				"switch"			
+			] 
+		},
+
+		{
+			image_path : "images/march/gigantosaurus.jpg",
+			name : "Gigantosaurus The Game",
+			developer : "WildSphere",
+			publisher : "Outright Games Ltd.",
+			YT_link: "https://www.youtube.com/embed/S79JK8AGTzg",
+			description: "The most exciting episode of Gigantosaurus yet is one you get to play in. But will you be the most roarsome explorer or the fastest racer? Play together with friends and family to help Rocky, Tiny, Mazu and Bill save the day – before dino-dashing to the next zone. Dinosaurs have never had such giant fun!",
+			dev_wiki: null,
+			pub_wiki: null,
+			genres: "Adventure, Racing",
+
+			stores: {
+				Steam: "https://store.steampowered.com/app/1177020/Gigantosaurus_The_Game/",
+				Nintendo: "https://www.nintendo.com/games/detail/gigantosaurus-the-game-switch/",
+				Microsoft: "https://www.microsoft.com/en-us/p/gigantosaurus-the-game/9n3pc5p2s47w?activetab=pivot:overviewtab"
+			},
+
+			devices : [
+				"pc",
+				"switch",
+				"xone",
+				"ps4"		
 			] 
 		}],
 
