@@ -147,7 +147,7 @@ a:hover {
 }
 
 .description > p {
-	font-size: 18px;
+	font-size: 2.3vh;
 	overflow-y: auto;
 	margin: 15px;
 	margin-top: 0px;
@@ -161,7 +161,7 @@ a:hover {
 }
 
 .publisher, .developer, .stores, .genres {
-	font-size: 20px;
+	font-size: 2.4vh;
 	line-height: 15px;
 	margin: 10px;
 }
@@ -199,7 +199,7 @@ a:hover {
 	left: 50%;
 	transform: translateX(-50%) translateY(-50%) rotate(90deg);
 	letter-spacing: 15px;
-	font-size: 30px;
+	font-size: 3vh;
 	font-family: 'Quicksand', sans-serif;
 	color: #AAAAAA;
 	margin: 0px;
@@ -231,13 +231,15 @@ a:hover {
 	background-color: #25323D;
 	height: 160px;
 	width: 20%;
+
 	border-radius: 15px;
 	padding: 0px;	
 	z-index: 1;
 }
 
-div.hasRelease {
+.hasRelease {
 	position: relative;
+	cursor: pointer;
 	display: table-cell;
 }
 

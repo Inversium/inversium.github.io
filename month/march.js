@@ -65,8 +65,8 @@ var data = {
 			name : "Murder by Numbers",
 			developer : "Mediatonic",
 			publisher : "The Irregular Corporation",
-			YT_link: "https://www.youtube.com/embed/QRWG7m_7kzQ",
-			description: "In this kingdom management RPG, petitioners will arrive in the throne room each turn to ask for your advice and assistance. Decide whether to help them with their problems, or to conserve resources for more important matters. Remember: supplies are limited, and not everyone has the kingdom’s best interests at heart...",
+			YT_link: "https://www.youtube.com/embed/HVSXiRPYL30",
+			description: "Solve Pixel Puzzles to find clues. Use those clues to interrogate witnesses. Work your way to the truth... ...and uncover the mystery of Murder by Numbers!",
 			dev_wiki: "https://en.wikipedia.org/wiki/Mediatonic",
 			pub_wiki: null,
 			genres: "Adventure, Detective, Puzzle",
@@ -85,11 +85,11 @@ var data = {
 		_11 : [{
 			image_path : "images/march/ori.jpg",
 			name : "Ori and Will of the Wisps",
-			YT_link: "https://www.youtube.com/embed/2reK8k8nwBc",
-			description: "Players assume control of Ori, a white guardian spirit. To progress in the game, players are tasked to move between platforms and solve puzzles. The game world unfolds to the player in the form of a Metroidvania, with new movement abilities allowing the player to access previously inaccessible areas. Unlike The Blind Forest, however, Will of the Wisps relies on autosaving rather than manually placed soul links, and the sequential upgrade system of the first title has been abandoned for a shard system more akin to charms in Hollow Knight. Some of the foundational gameplay elements were inspired by the Rayman and Metroid franchises.",
 			developer : "Moon Studios",
-			dev_wiki: "https://en.wikipedia.org/wiki/Moon_Studios",
 			publisher : "Xbox Game Studios",
+			YT_link: "https://www.youtube.com/embed/2reK8k8nwBc",
+			description: "Players assume control of Ori, a white guardian spirit. To progress in the game, players are tasked to move between platforms and solve puzzles. The game world unfolds to the player in the form of a Metroidvania, with new movement abilities allowing the player to access previously inaccessible areas. Unlike The Blind Forest, however, Will of the Wisps relies on autosaving rather than manually placed soul links, and the sequential upgrade system of the first title has been abandoned for a shard system more akin to charms in Hollow Knight. Some of the foundational gameplay elements were inspired by the Rayman and Metroid franchises.",			
+			dev_wiki: "https://en.wikipedia.org/wiki/Moon_Studios",			
 			pub_wiki: "https://en.wikipedia.org/wiki/Xbox_Game_Studios",
 			genres: "Platform-adventure, Metroidvania",
 
@@ -109,6 +109,18 @@ var data = {
 			name : "Hidden Through Time",
 			developer : "Crazy Monkey Studios",
 			publisher : "Crazy Monkey Studios",
+			YT_link: "https://www.youtube.com/embed/BEx6zHEH_bI",
+			description: "Hidden Through Time is a game of hide and seek with objects scattered throughout the wonderful history of our world. Use cryptic hints to discover every secret as you explore the colourful hand drawn levels. Find enough objects to advance to the next stage, and make your way through all four great ages.",
+			dev_wiki: "https://en.wikipedia.org/wiki/Crazy_Monkey_Studios",
+			pub_wiki: "https://en.wikipedia.org/wiki/Crazy_Monkey_Studios",
+			genres: "Puzzle, Casual, Hand-Drawn",
+			
+			stores: {
+				Steam: "https://store.steampowered.com/app/524910/Hidden_Through_Time/",
+				Nintendo: "https://www.nintendo.com/games/detail/hidden-through-time-switch/",
+				Playstation: "https://store.playstation.com/en-us/product/UP1725-CUSA18631_00-0000000000444444?smcid=pdc%3Aen-us%3Agames-hidden-through-time-ps4%3Aprimary%2520nav%3Amsg-games%3Abuy-games",
+			},
+
 			devices : [
 				"pc",
 				"xone",
@@ -122,6 +134,16 @@ var data = {
 			name : "Nioh 2",
 			developer : "Team Ninja",
 			publisher : "Sony Interactive Entertainment",
+			YT_link: "https://www.youtube.com/embed/ETWtvVGFNqU",
+			description: "Journey to 1555 Japan, a country gripped in endless warfare where monsters and evil spirits stalk a land of natural beauty and menacing peril.",
+			dev_wiki: "https://en.wikipedia.org/wiki/Team_Ninja",
+			pub_wiki: "https://en.wikipedia.org/wiki/Sony_Interactive_Entertainment",
+			genres: "Puzzle, Casual, Hand-Drawn",
+			
+			stores: {
+				Playstation: "https://store.playstation.com/en-us/product/UP9000-CUSA15532_00-NIOH2NA000000000?emcid=pa-st-238047&utm_campaign=&utm_content=Nioh_2&utm_medium=Paid_Search&utm_source=&utm_term=pa-st-238047"
+			},
+
 			devices : [
 				"ps4"		
 			] 
@@ -132,6 +154,16 @@ var data = {
 			name : "Granblue Fantasy: Versus",
 			developer : "Arc System Works",
 			publisher : "Cygames",
+			YT_link: "https://www.youtube.com/embed/D-8_eWMQuqA",
+			description: "This fantasy game blends fighting game action and RPG-style adventure. Throw yourself into matches or enjoy powering up your characters!",
+			dev_wiki: "https://en.wikipedia.org/wiki/Arc_System_Works",
+			pub_wiki: "https://en.wikipedia.org/wiki/Cygames",
+			genres: "Fighting, Anime",
+			
+			stores: {
+				Steam: "https://store.steampowered.com/app/1090630/Granblue_Fantasy_Versus/"
+			},
+
 			devices : [
 				"pc"		
 			] 
@@ -142,6 +174,17 @@ var data = {
 			name : "DOOM Eternal",
 			developer : "id Software",
 			publisher : "Bethesda Softworks",
+			YT_link: "https://www.youtube.com/embed/qgvV4GE8vVA",
+			description: "Hell’s armies have invaded Earth. Become the Slayer in an epic single-player campaign to conquer demons across dimensions and stop the final destruction of humanity. The only thing they fear... is you.",
+			dev_wiki: "https://en.wikipedia.org/wiki/Id_Software",
+			pub_wiki: "https://en.wikipedia.org/wiki/Bethesda_Softworks",
+			genres: "Action, First-Person Shooter, Violent",
+			
+			stores: {
+				Steam: "https://store.steampowered.com/app/782330/DOOM_Eternal/",
+				Bethesda: "https://bethesda.net/en/store/product/DO5CS1PCBG01BASE"
+			},
+
 			devices : [
 				"pc"				
 			] 
