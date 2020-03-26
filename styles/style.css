@@ -10,9 +10,11 @@ p {
 	margin: 0;
 }
 
-
-ul {
-	margin: 0;
+@media screen and (max-width: 800px) {
+	html {
+		overflow-y: scroll;
+	}
+	
 }
 
 html {
@@ -120,7 +122,29 @@ a.monthref:hover::before {
 	content: '_';
 }
 
+p#backP {
+	width: 10rem;
+	text-align: center;
+	position: absolute;
+	right: 30px;
+	top: 10px;
+	font-size: 0.9rem;
+	z-index: 10
+}
 
+a#backA {
+	text-align: center;
+	color: white;
+}
+
+a#backA:hover {
+}
+
+a#backA:hover::after,
+a#backA:hover::before {
+
+	content: '-';
+}
 
 
 .checked_cell {
