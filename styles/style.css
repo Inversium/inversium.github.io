@@ -114,7 +114,7 @@ a.monthref {
 }
 
 a.monthref:hover {
-	color: #B33;
+	color: #F55;
 }
 
 a.monthref:hover::after,

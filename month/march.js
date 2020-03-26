@@ -195,6 +195,16 @@ var data = {
 			name : "Animal Crossing: New Horizons",
 			developer : "Nintendo",
 			publisher : "Nintendo",
+			YT_link: "https://www.youtube.com/embed/_3YNL0OWio0",
+			description: "In Animal Crossing: New Horizons, start fresh on a deserted island and enjoy a peaceful existence full of creativity, freedom, and charm as you roll up your sleeves and make your new life whatever you want it to be. Collect resources you can craft into everything from creature comforts to handy tools. Embrace your green thumb and try out some new tricks of the gardening trade. Set up a perfect homestead where the rules of what goes indoors or out no longer apply. Go fishing, pole-vault across rivers as you explore your island home, make friends with new arrivals, kick back and enjoy the seasons, and more!",
+			dev_wiki: "https://en.wikipedia.org/wiki/Nintendo_Entertainment_Planning_%26_Development",
+			pub_wiki: "https://en.wikipedia.org/wiki/Nintendo",
+			genres: "Social simulation",
+			
+			stores: {
+				Nintendo: "https://www.nintendo.com/games/detail/animal-crossing-new-horizons-switch/"
+			},
+
 			devices : [
 				"switch"				
 			] 
@@ -205,6 +215,16 @@ var data = {
 			name : "Half-Life: Alyx",
 			developer : "Valve",
 			publisher : "Valve",
+			YT_link: "https://www.youtube.com/embed/h23q_E5lWqs",
+			description: "Half-Life: Alyx is Valve’s VR return to the Half-Life series. It’s the story of an impossible fight against a vicious alien race known as the Combine, set between the events of Half-Life and Half-Life 2. Playing as Alyx Vance, you are humanity’s only chance for survival.",
+			dev_wiki: "https://en.wikipedia.org/wiki/Valve_Corporation",
+			pub_wiki: "https://en.wikipedia.org/wiki/Valve_Corporation",
+			genres: "First-Person Shooter, VR",
+			
+			stores: {
+				Steam: "https://store.steampowered.com/app/546560/HalfLife_Alyx/"
+			},
+
 			devices : [
 				"pc"			
 			] 
@@ -213,8 +233,19 @@ var data = {
 		_24 : [{
 			image_path : "images/march/bleeding_edge.jpg",
 			name : "Bleeding Edge",
-			developer : "Ninja Studios",
+			developer : "Ninja Theory",
 			publisher : "Xbox Games Studios",
+			YT_link: "https://www.youtube.com/embed/nRWU5-zGFms",
+			description: "Team Up. Cause Chaos. Grab your team and tear it up in Bleeding Edge, an electrifying online brawler where every fighter comes mechanically enhanced for mayhem!",
+			dev_wiki: "https://en.wikipedia.org/wiki/Ninja_Theory",
+			pub_wiki: "https://en.wikipedia.org/wiki/Xbox_Game_Studios",
+			genres: "Team Brawler, Multiplayer",
+			
+			stores: {
+				Steam: "https://store.steampowered.com/app/1189800/Bleeding_Edge/",
+				Microsoft: "https://www.microsoft.com/en-us/p/bleeding-edge/9ns9gt6fr6qc?activetab=pivot:overviewtab"
+			},
+
 			devices : [
 				"pc",
 				"xone"			
@@ -225,10 +256,23 @@ var data = {
 			image_path : "images/march/moonsofmadness.jpg",
 			name : "Moons of Madness",
 			developer : "Rock Pocket Games",
-			publisher : "Rock Pocket Games",
+			publisher : "Funcom",
+			YT_link: "https://www.youtube.com/embed/8RPGUHMrjE0",
+			description: "Moons of Madness is a first-person, story-driven cosmic horror game where the scientific exploration of Mars meets the supernatural dread of Lovecraft.",
+			dev_wiki: null,
+			pub_wiki: "https://en.wikipedia.org/wiki/Funcom",
+			genres: "Adventure, Horror, Space",
+			
+			stores: {
+				Steam: "https://store.steampowered.com/app/1012840/Moons_of_Madness/",
+				Microsoft: "https://www.microsoft.com/en-us/p/moons-of-madness/9ntjrl415ztl?activetab=pivot:overviewtab",
+				Playstation: "https://store.playstation.com/en-us/product/UP1850-CUSA15373_00-MOONSOFMADNESS01?smcid=psblog%3Aen%3Apage-name%3A%3AMoons%20of%20Madness"
+			},
+
 			devices : [
 				"pc",
-				"xone"			
+				"xone",
+				"ps4"			
 			] 
 		}],
 
@@ -237,6 +281,19 @@ var data = {
 			name : "One Piece: Pirate Warriors 4",
 			developer : "Omega Force",
 			publisher : "Bandai Namco",
+			YT_link: "https://www.youtube.com/embed/y093U5Obaok",
+			description: "The Pirate Warriors are back and bring with them a more explosive story, more environments and even crazier attacks in ONE PIECE: PIRATE WARRIORS 4. Follow Luffy and the Straw Hats from the beginning as they make their journey through different islands and onwards in the hopes of finding the illustrious treasure - the One Piece. Play through some of the most extraordinary areas in the ONE PIECE story and take on memorable foes.",
+			dev_wiki: "https://en.wikipedia.org/wiki/Omega_Force",
+			pub_wiki: "https://en.wikipedia.org/wiki/Bandai_Namco_Entertainment",
+			genres: "Action-adventure, Beat 'em up",
+			
+			stores: {
+				Steam: "https://store.steampowered.com/app/1089090/ONE_PIECE_PIRATE_WARRIORS_4/",
+				Nintendo: "https://www.nintendo.com/games/detail/one-piece-pirate-warriors-4-switch/",
+				Microsoft: "https://www.microsoft.com/en-us/p/one-piece-pirate-warriors-4/9n6hb778zwp2?activetab=pivot:overviewtab",
+				Playstation: "https://www.playstation.com/en-us/games/one-piece-pirate-warriors-4-ps4/"
+			},
+
 			devices : [
 				"pc",
 				"xone",
@@ -275,6 +332,16 @@ var data = {
 			name : "Persona 5 Royal",
 			developer : "Atlus",
 			publisher : "Sega",
+			YT_link: "https://www.youtube.com/embed/uopjveI_vc8",
+			description: "Wear the mask. Reveal your truth. Prepare for an all-new RPG experience in Persona®5 Royal based in the universe of the award-winning series, Persona®! Don the mask of Joker and join the Phantom Thieves of Hearts. Break free from the chains of modern society and stage grand heists to infiltrate the minds of the corrupt and make them change their ways! Persona®5 Royal is packed with new characters, story depth, new locations to explore, & a new grappling hook mechanic for access to new areas.",
+			dev_wiki: "https://en.wikipedia.org/wiki/Atlus",
+			pub_wiki: "https://en.wikipedia.org/wiki/Sega",
+			genres: "RPG",
+			
+			stores: {
+				Playstation: "https://store.playstation.com/en-us/product/UP0177-CUSA17416_00-PERSONA5R0000000"
+			},
+
 			devices : [
 				"ps4"		
 			] 

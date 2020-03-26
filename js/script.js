@@ -69,6 +69,7 @@ var buildInfoBlock = function(date, index) {
 	date = '_' + date;
 	let div = document.createElement('div');
 	div.classList.add('infoblock');
+	div.setAttribute('data-gametitle', data[date][index].name);
 	let details = buildDetails(date, index);
 	let description = buildDescription(date, index);
 	let closebutton = document.createElement('button');
@@ -134,6 +135,10 @@ var createTableCell = function(release, date) {
 	}
 	iconset.classList.add('iconset');
 	cell.appendChild(iconset);
+
+	if(document.querySelector('.infoblock') != null)
+		if (document.querySelector('.infoblock').getAttribute('data-gametitle') === release.name)
+			cell.classList.add('checked');
 
 	cell.onclick = showInfo;
 
