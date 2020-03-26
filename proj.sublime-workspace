@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"mi",
+				"min-height\tproperty"
+			],
+			[
 				"font",
 				"font-size\tproperty"
 			],
@@ -300,7 +304,7 @@
 			"file": "styles/style.css",
 			"settings":
 			{
-				"buffer_size": 4894,
+				"buffer_size": 4730,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -309,7 +313,7 @@
 			"file": "js/script.js",
 			"settings":
 			{
-				"buffer_size": 6383,
+				"buffer_size": 6698,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -439,7 +443,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -448,15 +452,19 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4894,
+						"buffer_size": 4730,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3553,
-								3553
+								243,
+								243
+							],
+							[
+								275,
+								275
 							]
 						],
 						"settings":
@@ -464,7 +472,7 @@
 							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2166.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -476,15 +484,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6383,
+						"buffer_size": 6698,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3111,
-								3111
+								4910,
+								4910
 							]
 						],
 						"settings":
@@ -492,10 +500,10 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1140.0,
+						"translation.y": 2106.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -524,7 +532,7 @@
 						"translation.y": 2736.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]

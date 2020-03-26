@@ -4,7 +4,10 @@
 
 p {
 	font-size: 16px;    
-	line-height: 2;
+}
+
+* {
+	margin: 0;
 }
 
 
@@ -13,8 +16,16 @@ ul {
 }
 
 html {
-	font-size: 18px;
+	font-size: calc(12px + 2vmax);
 	font-family: 'Quicksand', sans-serif;
+}
+
+@media screen and (min-width: 25em){
+
+  html { 
+  	font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) ); 
+  }
+
 }
 
 h1 {
@@ -22,6 +33,11 @@ h1 {
 	margin: 15px;
  	padding: 0px 0px;
  	z-index: 10;
+}
+
+.monthname {
+	text-align: center;
+	margin: 30px;
 }
 
 .mainheader {
@@ -45,7 +61,11 @@ body {
  	z-index: -1;
 }
 
-body::after {
+body#index {
+	background-color: #303030;
+}
+
+body#month::after {
 	position: fixed;
 	content: '';
 	background: linear-gradient(to right top, rgba(20, 20, 20, 1) 0%, rgba(20, 20, 20, 0.8) 80%, rgba(0, 0, 0, 0) 100%);
@@ -57,12 +77,13 @@ body::after {
 	z-index: 0;
 }
 
+
+
 table {
 	position: relative;
-	margin-top: 50px;
-	margin-bottom: 150px;
+	margin: 0px auto 300px;
 	border-spacing: 10px;
-	width: 85%;
+	width: 90%;
 	z-index: 1;
 }
 
@@ -76,12 +97,30 @@ iframe {
 
 a {
 	text-decoration: none;
+}
+
+a.commonref {
 	color: blue;
 }
 
-a:hover {
+a.commonref:hover {
 	border-bottom: 1px solid blue;
 }
+
+a.monthref {
+	color: white;
+}
+
+a.monthref:hover {
+	color: #B33;
+}
+
+a.monthref:hover::after,
+a.monthref:hover::before {
+	content: '_';
+}
+
+
 
 
 .checked_cell {
@@ -96,18 +135,9 @@ a:hover {
 	height: 16px;
 	width: 16px;
 	border-radius: 50%;
-	animation: 0.3s ease-in-out 0s radio-focus;
+	animation: 0.3s ease-in-out 0s reveal;
 	animation-fill-mode: forwards;
 	background-color: white;
-}
-
-@keyframes radio-focus {
-	from {
-		opacity: 0;
-	}	
-	to {
-		opacity: 1;
-	}
 }
 
 .radio {
@@ -131,6 +161,7 @@ a:hover {
 	bottom: 0px;
 	width: 100%;
 	height: 25%;
+	min-height: 180px;
 	position: fixed;
 	z-index: 10;
 }
@@ -147,7 +178,7 @@ a:hover {
 }
 
 .description > p {
-	font-size: 2.3vh;
+	font-size: 0.6rem;
 	overflow-y: auto;
 	margin: 15px;
 	margin-top: 0px;
@@ -160,14 +191,15 @@ a:hover {
     display: none;
 }
 
-.publisher, .developer, .stores, .genres {
-	font-size: 2.4vh;
-	line-height: 15px;
-	margin: 10px;
+.publisher, 
+.developer, 
+.stores, 
+.genres {
+	font-size: 0.6rem;
 }
 
 .checked::after {
-	transition: all 0.3s ease-in-out;
+	transition: all 0.17s ease-in-out;
 	border: 3px solid white;
 }
 
@@ -176,7 +208,9 @@ a:hover {
 	float: left;
 	display: block;
 	margin: 15px;
+	margin-right: 4%;
 	margin-left: 30px;
+	line-height: 0.8em;
 }
 
 .closeinfo {
@@ -188,7 +222,7 @@ a:hover {
 	transition: background-color 0.2s ease-in-out;
 	border: none;
 	width: 3%;
-	min-width: 40px;
+	min-width: 30px;
 	background-color: #EFEFEF;
 	cursor: pointer;
 }
@@ -198,8 +232,8 @@ a:hover {
 	top: 50%;
 	left: 50%;
 	transform: translateX(-50%) translateY(-50%) rotate(90deg);
-	letter-spacing: 15px;
-	font-size: 3vh;
+	letter-spacing: 2vh;
+	font-size: 0.8rem;
 	font-family: 'Quicksand', sans-serif;
 	color: #AAAAAA;
 	margin: 0px;
@@ -310,24 +344,6 @@ div.hasRelease > td {
 	z-index: 3;
 }
 
-
-
-
-@keyframes slide-in {
-	from {
-	    left: -20%;
-	    opacity: 0;
-    }
-
-    20% {
-    	opacity: 0.1;
-    }
-
-  	to {  	
-    	opacity: 1;
-  	}
-}
-
 @keyframes reveal {
 	from {
 		opacity: 0;
@@ -335,11 +351,5 @@ div.hasRelease > td {
 
 	to {
 		opacity: 1;
-	}
-}
-
-@keyframes reveal-second {
-	to {
-		clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
 	}
 }

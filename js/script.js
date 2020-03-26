@@ -5,6 +5,13 @@ var d = new Date();
 var num = d.getDate();
 var bool = 1;
 
+function getBrowserDimensions() {
+  return {
+    width: (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth),
+    height: (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight)
+  };
+}
+
 var buildTrailer = function(date, index) {
 	let iframe = document.createElement('iframe');
 	iframe.src = data[date][index].YT_link;
@@ -39,15 +46,15 @@ var buildDetails = function(date, index) {
 
 	let StoreText = '<b>Store(s): </b>';
 	for(let store in data[date][index].stores) {
-		StoreText += '<a href = "' + data[date][index].stores[store] + '">' + store + '</a>' + ', ';
+		StoreText += '<a class="commonref" href = "' + data[date][index].stores[store] + '">' + store + '</a>' + ', ';
 	}
 	StoreText = StoreText.slice(0, -2);
 
 	stores.innerHTML = StoreText;
 	genres.innerHTML = '<b>Genre(s):</b> ' + data[date][index].genres;
-	if(data[date][index].pub_wiki != undefined) publisher.innerHTML = '<b>Publisher: </b><a href ="' + data[date][index].pub_wiki + '">' + data[date][index].publisher + '</a>';	
+	if(data[date][index].pub_wiki != undefined) publisher.innerHTML = '<b>Publisher: </b><a class="commonref" href ="' + data[date][index].pub_wiki + '">' + data[date][index].publisher + '</a>';	
 	else publisher.innerHTML = '<b>Publisher: </b>' + data[date][index].publisher;
-	if(data[date][index].dev_wiki != undefined) developer.innerHTML = '<b>Developer: </b><a href ="' + data[date][index].dev_wiki + '">' + data[date][index].developer + '</a>';
+	if(data[date][index].dev_wiki != undefined) developer.innerHTML = '<b>Developer: </b><a class="commonref" href ="' + data[date][index].dev_wiki + '">' + data[date][index].developer + '</a>';
 	else developer.innerHTML = '<b>Developer: </b>' + data[date][index].developer;
 
 	div.appendChild(publisher);
@@ -141,6 +148,7 @@ var deleteInfoBlock = function() {
 }
 
 var showNewCell = function() {
+	if (this.classList.contains('checked_cell')) return -1;
 	this.parentNode.querySelector('.checked_cell').classList.remove('checked_cell');
 	this.classList.add('checked_cell');
 	let i = this.getAttribute('data-index');
